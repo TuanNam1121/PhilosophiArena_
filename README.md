@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lăng Kính · Philosophy Arena
 
-## Getting Started
+> Một vấn đề. Nhiều cách nhìn. Tự bạn đi đến kết luận.
 
-First, run the development server:
+Prototype Arena cho đồ án môn học. Sáu nhà tư tưởng cùng hiện diện; nhóm được chọn nêu quan điểm rồi trao đổi, trả lời và phản biện nhau. Người dùng chủ yếu theo dõi, có thể tham gia nếu muốn, mở X-Ray và viết lập trường của mình. Court và Socratic trong tài liệu thiết kế chưa được triển khai thành mode riêng.
+
+## Chạy dự án
+
+Yêu cầu Node.js và npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kết nối AI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tạo file `.env` ở thư mục gốc:
 
-## Learn More
+```env
+OPENAI_API_KEY=your_api_key
+AI_MODEL=gpt-6-luna
+```
 
-To learn more about Next.js, take a look at the following resources:
+Không đưa giá trị key lên Git. Nếu chưa có key, Arena vẫn chạy bằng lời thoại mẫu để xem luồng giao diện.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Lời thoại AI là mô phỏng lăng kính tư tưởng, không phải trích dẫn lịch sử.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Philosophy X-Ray
 
-## Deploy on Vercel
+X-Ray truy hồi trên toàn bộ nội dung học thuật mục B của ba chương giáo trình trong `docs/`. `concepts.json` chỉ là anchors cho một số khái niệm, không giới hạn phạm vi nguồn. Kết quả nối lời bàn luận thật với đoạn sách, kèm trích dẫn và vị trí trang/dòng; không ghép chỉ vì trùng từ khóa.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Chỉ mục tự cập nhật trước `dev` và `build`. Sau khi sửa giáo trình, có thể sinh và kiểm tra riêng:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run index:mln111
+npm run check:xray-content
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+Đánh giá ý nghĩa bằng model thật dùng key trong `.env` và có API billing:
+
+```bash
+npm run eval:xray -- --all
+npm run check:xray-evidence
+```
+
+Lệnh đầu lưu checkpoint vào `content/mln111/xray-live-evaluation.json`. Có thể dùng `--all --resume` nếu mã/nguồn/corpus không đổi; `--case <id>` chạy một ca. Lệnh kiểm tra bằng chứng không gọi API, yêu cầu đủ corpus và fingerprint còn khớp. Kết quả test cục bộ hay một smoke case không thay thế đánh giá toàn bộ bằng model thật.
+
+Hợp đồng, phạm vi, các trạng thái rỗng/lỗi, cấu trúc thành phần và giới hạn kiểm chứng: [docs/xray.md](docs/xray.md). Chất lượng học thuật của liên hệ vẫn cần đọc và đối chiếu; hợp lệ về ID/trích dẫn không tự chứng minh giải thích đúng.
+
+Kết quả đợt rà soát và sửa ngày 02/10/2026: [docs/xray-review.md](docs/xray-review.md).

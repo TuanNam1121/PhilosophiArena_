@@ -1,0 +1,196 @@
+[
+  {
+    "id": "practice-cognition",
+    "title": "Thực tiễn và nhận thức",
+    "definition": "Thực tiễn là hoạt động vật chất có mục đích, qua đó con người cải biến tự nhiên và xã hội; đây là cơ sở, động lực, mục đích của nhận thức và tiêu chuẩn kiểm tra chân lý.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục III.2.b và III.2.d.",
+    "sourceSectionIds": ["ch2-iii-2-b", "ch2-iii-2-d"],
+    "searchTerms": ["kiểm nghiệm", "kiểm chứng", "vận dụng", "trải nghiệm thực tế", "thử nghiệm", "chân lý", "hoạt động vật chất"],
+    "matchGuidance": "Chỉ ghép khi lập luận nêu rõ nhận thức được hình thành, định hướng hoặc kiểm tra bằng hoạt động thực tế. Chỉ nhắc đến trải nghiệm, thực hành hay thử một công cụ thì chưa đủ."
+  },
+  {
+    "id": "matter-consciousness",
+    "title": "Vật chất và ý thức",
+    "definition": "Vật chất quyết định nguồn gốc, nội dung và sự biến đổi của ý thức; ý thức có tính độc lập tương đối và tác động trở lại hiện thực thông qua hoạt động thực tiễn.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục I.3.b.",
+    "sourceSectionIds": ["ch2-i-3-b"],
+    "searchTerms": ["hiện thực khách quan", "tồn tại độc lập", "ý thức phản ánh", "điều kiện vật chất", "tác động trở lại", "tư duy", "ý chí"],
+    "matchGuidance": "Chỉ ghép khi lập luận phân tích cả điều kiện hiện thực định hình suy nghĩ và cách suy nghĩ hoặc mục đích tác động trở lại hiện thực qua hành động. Chỉ nhắc đến công nghệ, ý tưởng hay nhận thức thì chưa đủ."
+  },
+  {
+    "id": "universal-connection",
+    "title": "Mối liên hệ phổ biến",
+    "definition": "Các sự vật, mặt và quá trình có những mối liên hệ ràng buộc, quy định và tác động qua lại; khi phân tích cần xác định mối liên hệ cụ thể cùng vai trò của nó.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục II.2.a.",
+    "sourceSectionIds": ["ch2-ii-2-a"],
+    "sourceUnitTitles": ["Nguyên lý về mối liên hệ phổ biến"],
+    "searchTerms": ["quan hệ", "tác động qua lại", "ràng buộc", "quy định lẫn nhau", "toàn diện", "điều kiện cụ thể"],
+    "matchGuidance": "Chỉ ghép khi lập luận chỉ ra những yếu tố cụ thể liên hệ với nhau và giải thích tác động qua lại của chúng. Liệt kê nhiều yếu tố hoặc nói chung rằng mọi thứ đều liên quan thì chưa đủ."
+  },
+  {
+    "id": "cause-effect",
+    "title": "Nguyên nhân và kết quả",
+    "definition": "Nguyên nhân là sự tác động qua lại làm phát sinh biến đổi; kết quả là biến đổi nảy sinh từ tác động ấy. Một kết quả có thể do nhiều nguyên nhân cùng điều kiện tạo nên.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục II.2.b.",
+    "sourceSectionIds": ["ch2-ii-2-b"],
+    "sourceUnitTitles": ["Nguyên nhân và kết quả"],
+    "searchTerms": ["điều kiện", "làm phát sinh", "hệ quả", "tác động", "nhiều nguyên nhân", "tương quan", "trình tự sự kiện"],
+    "matchGuidance": "Chỉ ghép khi lập luận giải thích một tương tác hoặc điều kiện tạo ra biến đổi cụ thể, và phân biệt được nguyên nhân với trình tự hay tương quan đơn thuần. Chỉ kể hai sự việc nối tiếp nhau thì chưa đủ."
+  },
+  {
+    "id": "quantity-quality",
+    "title": "Chuyển hóa giữa lượng và chất",
+    "definition": "Lượng biến đổi trong một giới hạn nhất định; khi tích lũy vượt giới hạn ấy, sự vật chuyển biến về chất qua bước nhảy. Chất mới lại tác động đến lượng.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục II.2.c.",
+    "sourceSectionIds": ["ch2-ii-2-c"],
+    "sourceUnitTitles": ["Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại"],
+    "searchTerms": ["tích lũy", "ngưỡng", "độ", "điểm nút", "bước nhảy", "biến đổi về chất", "thay đổi dần dần"],
+    "matchGuidance": "Chỉ ghép khi lập luận thể hiện sự tích lũy về lượng, một ngưỡng hoặc điểm chuyển, và biến đổi về chất; có thể kèm tác động ngược của chất mới. Nhiều hơn, thường xuyên hơn hoặc dùng AI nhiều hơn tự nó không phải bằng chứng."
+  },
+  {
+    "id": "dialectical-contradiction",
+    "title": "Thống nhất và đấu tranh của các mặt đối lập",
+    "definition": "Mâu thuẫn biện chứng là quan hệ giữa những khuynh hướng đối lập cùng tồn tại trong một sự vật; chúng vừa ràng buộc vừa tác động theo hướng đối lập, tạo động lực biến đổi.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục II.2.c.",
+    "sourceSectionIds": ["ch2-ii-2-c"],
+    "sourceUnitTitles": ["Quy luật thống nhất và đấu tranh của các mặt đối lập"],
+    "searchTerms": ["mâu thuẫn nội tại", "mặt đối lập", "đối lập", "đấu tranh", "thống nhất", "động lực phát triển"],
+    "matchGuidance": "Chỉ ghép khi hai khuynh hướng đối lập nằm trong cùng một hiện tượng và sự tác động giữa chúng giúp giải thích biến đổi. Hai người bất đồng, hai ý kiến khác nhau hoặc một khó khăn chung chưa đủ."
+  },
+  {
+    "id": "social-being-consciousness",
+    "title": "Tồn tại xã hội và ý thức xã hội",
+    "definition": "Tồn tại xã hội là đời sống và điều kiện vật chất của xã hội; nó định hình ý thức xã hội, còn ý thức xã hội có tính độc lập tương đối và tác động trở lại đời sống ấy.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục IV.1 và IV.3.",
+    "sourceSectionIds": ["ch3-iv-1-a", "ch3-iv-1-b", "ch3-iv-3"],
+    "searchTerms": ["điều kiện sinh hoạt vật chất", "đời sống xã hội", "quan niệm xã hội", "tư tưởng xã hội", "định hình nhận thức", "tác động trở lại"],
+    "matchGuidance": "Chỉ ghép khi lập luận nối những điều kiện vật chất hoặc quan hệ xã hội cụ thể với quan niệm chung của xã hội, có thể nêu chiều tác động ngược. Chỉ nói về một chủ đề xã hội hay quan điểm cá nhân thì chưa đủ."
+  },
+  {
+    "id": "productive-forces-relations",
+    "title": "Lực lượng sản xuất và quan hệ sản xuất",
+    "definition": "Người lao động cùng tư liệu sản xuất tạo thành lực lượng sản xuất. Quan hệ sản xuất gồm các quan hệ về sở hữu, tổ chức và phân phối; chúng phù hợp hoặc không phù hợp với trình độ lực lượng sản xuất và tác động trở lại lực lượng ấy.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục I.2.",
+    "sourceSectionIds": ["ch3-i-2-a", "ch3-i-2-b"],
+    "searchTerms": ["người lao động", "tư liệu sản xuất", "công cụ lao động", "sở hữu", "tổ chức lao động", "phân phối", "phù hợp"],
+    "matchGuidance": "Chỉ ghép khi lập luận nêu rõ năng lực sản xuất hoặc lao động cùng cách tổ chức, sở hữu hay phân phối, rồi phân tích sự phù hợp hoặc xung đột giữa chúng. Chủ đề học tập, công việc hay AI tự nó chưa đủ."
+  },
+  {
+    "id": "materialism-idealism",
+    "title": "Chủ nghĩa duy vật và chủ nghĩa duy tâm",
+    "definition": "Hai lập trường khác nhau ở cách giải thích quan hệ giữa vật chất và ý thức: duy vật thừa nhận hiện thực vật chất khách quan; duy tâm xem tinh thần hoặc ý thức là cái có trước hay quyết định.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 1, mục I.2.b.",
+    "sourceSectionIds": ["ch1-i-2-b"],
+    "searchTerms": ["thế giới vật chất tồn tại độc lập", "ý thức có trước", "tinh thần quyết định", "hiện thực khách quan", "duy vật", "duy tâm"],
+    "matchGuidance": "Chỉ ghép khi lập luận thực sự giải thích cái nào có trước hoặc quyết định giữa vật chất và ý thức. Không ghép chỉ vì nhắc đến suy nghĩ, ý tưởng hay đồ vật."
+  },
+  {
+    "id": "fundamental-philosophical-question",
+    "title": "Vấn đề cơ bản của triết học",
+    "definition": "Vấn đề cơ bản của triết học xem xét quan hệ giữa tư duy và tồn tại, vật chất và ý thức, gồm mặt bản thể luận và khả năng con người nhận thức thế giới.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 1, mục I.2.a.",
+    "sourceSectionIds": ["ch1-i-2-a", "ch1-i-2-b", "ch1-i-2-c"],
+    "searchTerms": ["tư duy và tồn tại", "vật chất và ý thức", "cái nào có trước", "con người có nhận thức được thế giới không"],
+    "matchGuidance": "Chỉ ghép khi cuộc thoại đặt hoặc giải quyết quan hệ giữa tư duy/tinh thần và hiện thực/tồn tại, hoặc khả năng nhận thức thế giới; một câu hỏi chung về triết học chưa đủ."
+  },
+  {
+    "id": "knowability",
+    "title": "Khả tri và bất khả tri",
+    "definition": "Tranh luận về việc con người có thể nhận thức thế giới đến đâu, phân biệt khả năng nhận thức với giới hạn hoặc sự bất khả tri.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 1, mục I.2.c.",
+    "sourceSectionIds": ["ch1-i-2-c"],
+    "searchTerms": ["khả tri", "bất khả tri", "có thể biết", "không thể biết", "giới hạn nhận thức", "nhận thức hiện thực"],
+    "matchGuidance": "Chỉ ghép khi lập luận xem xét khả năng hoặc giới hạn nhận thức thế giới; không ghép mọi trường hợp người nói chưa biết một thông tin cụ thể."
+  },
+  {
+    "id": "dialectics-metaphysics",
+    "title": "Phương pháp biện chứng và siêu hình",
+    "definition": "Phương pháp biện chứng xem sự vật trong liên hệ và vận động; cách nhìn siêu hình có xu hướng tách rời, cố định hoặc xem xét một chiều.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 1, mục I.3.",
+    "sourceSectionIds": ["ch1-i-3-a", "ch1-i-3-b"],
+    "searchTerms": ["liên hệ", "vận động", "phát triển", "tách rời", "cố định", "một chiều", "biện chứng", "siêu hình"],
+    "matchGuidance": "Chỉ ghép khi lập luận thể hiện rõ cách xem xét sự vật trong liên hệ/biến đổi hoặc tách rời/cố định; không ghép chỉ vì có nói sự vật thay đổi."
+  },
+  {
+    "id": "negation-of-negation",
+    "title": "Quy luật phủ định của phủ định",
+    "definition": "Sự phát triển qua những lần phủ định biện chứng kế tiếp có tính kế thừa; sau một chu kỳ, những yếu tố của giai đoạn đầu có thể trở lại trên trình độ cao hơn, theo khuynh hướng phát triển đi lên.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục II.2.c.",
+    "sourceSectionIds": ["ch2-ii-2-c"],
+    "sourceUnitTitles": ["Quy luật phủ định của phủ định"],
+    "searchTerms": ["phủ định biện chứng", "kế thừa", "cái cũ", "cái mới", "phát triển theo chu kỳ", "vượt bỏ"],
+    "matchGuidance": "Chỉ ghép khi lập luận có những lần phủ định biện chứng kế tiếp, tính kế thừa và xu hướng trở lại trên trình độ cao hơn. Một lần thay đổi, thay vật dụng, bác bỏ hay giữ lại một yếu tố đơn lẻ chưa đủ để nêu quy luật phủ định của phủ định."
+  },
+  {
+    "id": "epistemology-truth",
+    "title": "Nhận thức và chân lý",
+    "definition": "Nhận thức phát triển từ phản ánh cảm tính đến tư duy lý tính và trở lại thực tiễn; chân lý có tính khách quan, cụ thể, đồng thời có các mặt tuyệt đối và tương đối.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 2, mục III.2.",
+    "sourceSectionIds": ["ch2-iii-2-a", "ch2-iii-2-c", "ch2-iii-2-d"],
+    "searchTerms": ["cảm tính", "lý tính", "khái niệm", "phán đoán", "suy luận", "chân lý khách quan", "chân lý cụ thể", "tuyệt đối", "tương đối"],
+    "matchGuidance": "Chỉ ghép khi lập luận bàn về quá trình hình thành/kiểm tra tri thức hoặc tiêu chuẩn, tính chất của chân lý; nêu ý kiến hay kết luận đơn thuần chưa đủ."
+  },
+  {
+    "id": "base-superstructure",
+    "title": "Cơ sở hạ tầng và kiến trúc thượng tầng",
+    "definition": "Cơ sở hạ tầng là các quan hệ sản xuất hợp thành cơ cấu kinh tế; kiến trúc thượng tầng gồm các quan điểm, thiết chế và quan hệ tương ứng, tác động qua lại với cơ sở ấy.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục I.3.",
+    "sourceSectionIds": ["ch3-i-3", "ch3-i-3-a", "ch3-i-3-b"],
+    "searchTerms": ["cơ cấu kinh tế", "quan hệ sản xuất", "thiết chế", "nhà nước", "pháp luật", "định hình xã hội", "tác động qua lại"],
+    "matchGuidance": "Chỉ ghép khi lập luận nối quan hệ kinh tế/sản xuất cụ thể với thiết chế hoặc quan niệm xã hội và phân tích chiều tác động; chỉ nhắc chính trị hay kinh tế riêng lẻ chưa đủ."
+  },
+  {
+    "id": "socioeconomic-formation",
+    "title": "Hình thái kinh tế – xã hội",
+    "definition": "Xã hội phát triển trong những hình thái gắn với phương thức sản xuất và các quan hệ xã hội tương ứng; sự vận động của chúng có điều kiện và quy luật lịch sử cụ thể.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục I.4.",
+    "sourceSectionIds": ["ch3-i-4-a", "ch3-i-4-b", "ch3-i-4-c"],
+    "searchTerms": ["hình thái xã hội", "phương thức sản xuất", "tiến trình lịch sử", "điều kiện lịch sử", "cấu trúc xã hội"],
+    "matchGuidance": "Chỉ ghép khi lập luận giải thích cấu trúc hoặc sự chuyển biến của xã hội bằng các điều kiện và quan hệ lịch sử cụ thể; nói xã hội thay đổi chung chung chưa đủ."
+  },
+  {
+    "id": "class-struggle",
+    "title": "Giai cấp và đấu tranh giai cấp",
+    "definition": "Giai cấp gắn với vị trí trong hệ thống sản xuất và quan hệ lợi ích; đấu tranh giai cấp phát sinh từ những đối kháng lợi ích xã hội nhất định.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục II.1.",
+    "sourceSectionIds": ["ch3-ii-1", "ch3-ii-1-a", "ch3-ii-1-b", "ch3-ii-1-c"],
+    "searchTerms": ["vị trí sản xuất", "lợi ích đối lập", "bóc lột", "đối kháng giai cấp", "đấu tranh giai cấp"],
+    "matchGuidance": "Chỉ ghép khi lập luận chỉ ra vị trí/lợi ích của các nhóm trong quan hệ sản xuất và mâu thuẫn lợi ích có tính giai cấp; bất đồng cá nhân chưa đủ."
+  },
+  {
+    "id": "nation-and-humanity",
+    "title": "Dân tộc và quan hệ giai cấp – dân tộc – nhân loại",
+    "definition": "Dân tộc là hình thức cộng đồng người có những liên kết lịch sử, kinh tế, lãnh thổ, ngôn ngữ và văn hóa; quan hệ dân tộc cần được xem cùng quan hệ giai cấp và nhân loại.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục II.2–II.3.",
+    "sourceSectionIds": ["ch3-ii-2-a", "ch3-ii-2-b", "ch3-ii-3-a", "ch3-ii-3-b"],
+    "searchTerms": ["cộng đồng người", "dân tộc", "quốc gia", "quan hệ giai cấp", "nhân loại", "lợi ích dân tộc"],
+    "matchGuidance": "Chỉ ghép khi lập luận phân tích sự hình thành/cấu trúc cộng đồng dân tộc hoặc quan hệ giữa lợi ích dân tộc, giai cấp và nhân loại; chỉ nhắc tên quốc gia chưa đủ."
+  },
+  {
+    "id": "state-and-social-revolution",
+    "title": "Nhà nước và cách mạng xã hội",
+    "definition": "Nhà nước là thiết chế quyền lực gắn với những điều kiện và quan hệ xã hội nhất định; cách mạng xã hội là sự biến đổi căn bản về chất của đời sống xã hội.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục III.",
+    "sourceSectionIds": ["ch3-iii-1", "ch3-iii-1-a", "ch3-iii-1-b", "ch3-iii-1-c", "ch3-iii-1-d", "ch3-iii-1-d-vn", "ch3-iii-2-a", "ch3-iii-2-b", "ch3-iii-2-c", "ch3-iii-2-d"],
+    "searchTerms": ["quyền lực nhà nước", "thiết chế", "bộ máy nhà nước", "biến đổi xã hội căn bản", "cách mạng", "phương pháp cách mạng"],
+    "matchGuidance": "Chỉ ghép khi lập luận phân tích nguồn gốc, chức năng hoặc tính chất của nhà nước, hay điều kiện và tính chất của biến đổi xã hội căn bản; tranh luận chính sách đơn lẻ chưa đủ."
+  },
+  {
+    "id": "human-nature-and-social-relations",
+    "title": "Con người, bản chất xã hội và tha hóa",
+    "definition": "Con người vừa là thực thể sinh học – xã hội, vừa hình thành qua lịch sử và các quan hệ xã hội; tha hóa xảy ra khi hoạt động/sản phẩm của con người trở thành sức mạnh xa lạ chi phối họ.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục V.1–V.2.",
+    "sourceSectionIds": ["ch3-v-1-a", "ch3-v-1-b", "ch3-v-1-c", "ch3-v-1-d", "ch3-v-1-d-vn", "ch3-v-2-a", "ch3-v-2-b", "ch3-v-2-c"],
+    "searchTerms": ["bản chất con người", "thực thể sinh học xã hội", "quan hệ xã hội", "lao động bị tha hóa", "mất quyền làm chủ", "giải phóng con người", "tự do"],
+    "matchGuidance": "Chỉ ghép khi lập luận nói về con người trong điều kiện/quan hệ xã hội cụ thể, hoặc hoạt động/sản phẩm trở nên xa lạ và chi phối người tạo ra nó; không ghép mọi vấn đề cá nhân vào tha hóa."
+  },
+  {
+    "id": "individual-society-and-historical-agency",
+    "title": "Cá nhân, xã hội, quần chúng và lãnh tụ",
+    "definition": "Cá nhân hình thành trong xã hội và tham gia tạo ra lịch sử; vai trò của quần chúng và lãnh tụ cần được xem trong quan hệ với điều kiện và hoạt động lịch sử.",
+    "source": "Giáo trình Triết học Mác–Lênin, Chương 3, mục V.3.",
+    "sourceSectionIds": ["ch3-v-3-a", "ch3-v-3-b"],
+    "searchTerms": ["cá nhân và xã hội", "quần chúng nhân dân", "lãnh tụ", "chủ thể lịch sử", "hành động tập thể"],
+    "matchGuidance": "Chỉ ghép khi lập luận làm rõ quan hệ cá nhân–xã hội hoặc vai trò của quần chúng/lãnh tụ trong một tiến trình lịch sử; chỉ nêu tên một cá nhân chưa đủ."
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-02T04:12:31.318Z",
+  "implementationSha256": "749dbbe2b9755db753f054e579fc672d31beaeb00751628c2db1d4f1ee620a30",
+  "bookIndexSha256": "8bbf60dc55c1f0ce227ee539f07f15ddbe7b3de92db8758f58332ed6ade36ac2",
+  "catalogSha256": "438bf6124212ba2d7ffc78046cd9f14e0508b4c3c055c2b1c1c6cd0ce0e51866",
+  "evaluatorSha256": "400213ac6ad46f575c0235e90aa0fd2a21a4b2f5f50ea28bc14236d5b7152b5d",
+  "clientFiles": 10,
+  "credentialLeaked": false,
+  "indexBundledInClient": false,
+  "routedServiceBundled": true,
+  "passed": true
+}

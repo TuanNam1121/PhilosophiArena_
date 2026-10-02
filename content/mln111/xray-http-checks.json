@@ -1,0 +1,69 @@
+{
+  "testedAt": "2026-10-02T03:58:51.267Z",
+  "implementationSha256": "749dbbe2b9755db753f054e579fc672d31beaeb00751628c2db1d4f1ee620a30",
+  "bookIndexSha256": "8bbf60dc55c1f0ce227ee539f07f15ddbe7b3de92db8758f58332ed6ade36ac2",
+  "catalogSha256": "438bf6124212ba2d7ffc78046cd9f14e0508b4c3c055c2b1c1c6cd0ce0e51866",
+  "evaluatorSha256": "400213ac6ad46f575c0235e90aa0fd2a21a4b2f5f50ea28bc14236d5b7152b5d",
+  "checks": [
+    {
+      "name": "insufficient-dialogue",
+      "expectedStatus": 200,
+      "status": 200,
+      "passed": true,
+      "response": {
+        "type": "xray",
+        "analysisState": "insufficient-dialogue",
+        "result": [],
+        "diagnostics": {
+          "totalSections": 119,
+          "indexedSections": 90,
+          "indexedUnits": 164,
+          "indexedChunks": 817,
+          "candidatePassages": 0,
+          "candidateUnits": 0,
+          "candidateChapters": [],
+          "transcriptTurns": 1,
+          "evidenceTurns": 0,
+          "reviewedEvidenceTurns": 0,
+          "modelBatches": 0,
+          "modelCalls": 0,
+          "semanticRoutes": 0,
+          "rejectedRoutes": 0,
+          "proposedMatches": 0,
+          "rejectedMatches": 0,
+          "duplicateMatches": 0,
+          "rejectionReasons": {},
+          "sourceSha256": "9946dd9625fcb73f87c80c8ec7a79e0ac65aba343ddf841fc14d7832553b2d78"
+        }
+      }
+    },
+    {
+      "name": "over-500",
+      "expectedStatus": 413,
+      "status": 413,
+      "passed": true,
+      "response": {
+        "error": "Phiên có hơn 500 lượt thoại nên chưa thể đối chiếu trong một lần. Hãy tạo phiên ngắn hơn."
+      }
+    },
+    {
+      "name": "duplicate-turn-id",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "response": {
+        "error": "Hãy kiểm tra câu hỏi và nội dung vừa nhập."
+      }
+    },
+    {
+      "name": "invalid-json",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "response": {
+        "error": "Dữ liệu gửi lên không hợp lệ."
+      }
+    }
+  ],
+  "passed": true
+}
