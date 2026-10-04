@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "evaluatedAt": "2026-10-02T04:02:05.476Z",
+  "model": "gpt-6-luna",
+  "endpoint": "http://localhost:3100/api/arena",
+  "sourceSha256": "9946dd9625fcb73f87c80c8ec7a79e0ac65aba343ddf841fc14d7832553b2d78",
+  "corpusSha256": "91147b4771986c27ffd2ea9ddaa2e63d8e8131bfc73258a1c9be4226526c2ca4",
+  "promptSha256": "a702a755bc214a8e887fd1eb0817ac689801990366cbfa7d28ad438fcfca2ee9",
+  "implementationSha256": "749dbbe2b9755db753f054e579fc672d31beaeb00751628c2db1d4f1ee620a30",
+  "bookIndexSha256": "8bbf60dc55c1f0ce227ee539f07f15ddbe7b3de92db8758f58332ed6ade36ac2",
+  "catalogSha256": "438bf6124212ba2d7ffc78046cd9f14e0508b4c3c055c2b1c1c6cd0ce0e51866",
+  "evaluatorSha256": "400213ac6ad46f575c0235e90aa0fd2a21a4b2f5f50ea28bc14236d5b7152b5d",
+  "scope": "Frozen source-unit oracles and actual production model output. Literal citations are independently checked by the production guard and source-integrity tests. This sample evaluation is not a guarantee for every future conversation.",
+  "cases": [
+    {
+      "id": "chapter-2-quantity-quality",
+      "kind": "positive",
+      "passed": true,
+      "errors": [],
+      "evaluatedAt": "2026-10-02T04:02:14.567Z",
+      "durationMs": 9008,
+      "observations": [],
+      "response": {
+        "type": "xray",
+        "analysisState": "matched",
+        "result": [
+          {
+            "conceptId": "quantity-quality",
+            "sourceSpanIds": [
+              "p-ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha-12~150"
+            ],
+            "evidenceSpanIds": [
+              "e-chapter-2-quantity-quality-turn-0~0"
+            ],
+            "reasoningPattern": "Phân biệt sự lặp lại của thay đổi nhỏ với sự chuyển biến về chất: yêu cầu xét mức tích lũy, ngưỡng chuyển biến và biểu hiện chất mới.",
+            "mapRelation": "đối chiếu tích lũy về lượng với bước chuyển về chất",
+            "whyItMatches": "Người nói nêu rằng thay đổi nhỏ lặp lại chưa chứng minh năng lực đã đổi, rồi yêu cầu xác định mức tích lũy, ngưỡng và biểu hiện khác về chất. Đoạn giáo trình cũng mô tả chất chỉ thay đổi khi lượng tích lũy đến giới hạn và qua bước nhảy; sự tương ứng nằm ở cách đặt điều kiện cho chuyển biến, không khẳng định năng lực học tập thực tế đã thay đổi.",
+            "supportType": "direct",
+            "everydayExample": "Một người luyện đàn mỗi ngày có thể theo dõi thời lượng luyện tập tích lũy và xem liệu họ có chuyển sang chơi được một kỹ thuật mới hay không, thay vì kết luận chỉ từ số ngày luyện.",
+            "sourceUnitId": "ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha",
+            "sourceUnitIds": [
+              "ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha"
+            ],
+            "sourceChunkId": "ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha-12",
+            "sourceSectionId": "ch2-ii-2-c",
+            "sourceTitle": "Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại",
+            "sourceQuote": "Bước nhảy làm cho chất mới ra đời, thay thế chất cũ là hình thức tất yếu của sự vận động, phát triển của mọi sự vật, hiện tượng; nhưng sự thay đổi về chất do thực hiện bước nhảy gây nên chỉ xảy ra khi lượng đã thay đổi đến giới hạn, tức là đến điểm nút, đến độ nên muốn tạo ra bước nhảy thì phải thực hiện quá trình tích lũy về lượng.",
+            "sourceExcerpt": "trong hoạt động nhận thức và hoạt động thực tiễn phải biết tích lũy về lượng để có biến đổi về chất; không được nôn nóng cũng như không được bảo thủ. Bước nhảy làm cho chất mới ra đời, thay thế chất cũ là hình thức tất yếu của sự vận động, phát triển của mọi sự vật, hiện tượng; nhưng sự thay đổi về chất do thực hiện bước nhảy gây nên chỉ xảy ra khi lượng đã thay đổi đến giới hạn, tức là đến điểm nút, đến độ nên muốn tạo ra bước nhảy thì phải thực hiện quá trình tích lũy về lượng. Thứ hai, khi lượng đã đạt đến điểm nút thì thực hiện bước nhảy là yêu cầu khách quan của sự vận động của sự vật, hiện tượng; tư tưởng nôn nóng thường biểu hiện ở chỗ không chú ý thỏa đáng đến sự tích lũy về lượng mà cho rằng sự phát triển của sự vật, hiện tượng chỉ là những bước nhảy liên tục; ngược lại, tư tưởng bảo thủ thường biểu hiện ở chỗ không dám thực hiện bước nhảy, coi sự phát triển chỉ là những thay đổi về lượng. Do vậy, cần khắc phục cả hai biểu hiện trên. Thứ ba, sự tác động của quy luật này đòi hỏi phải có thái độ khách quan, khoa học và quyết tâm thực hiện bước nhảy; tuy đều",
+            "sourceCitations": [
+              {
+                "chunkId": "ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha-12",
+                "unitId": "ch2-ii-2-c-u-quy-luat-chuyen-hoa-tu-nhung-thay-doi-ve-luong-dan-den-nhung-tha",
+                "title": "Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại",
+                "quotes": [
+                  "Bước nhảy làm cho chất mới ra đời, thay thế chất cũ là hình thức tất yếu của sự vận động, phát triển của mọi sự vật, hiện tượng; nhưng sự thay đổi về chất do thực hiện bước nhảy gây nên chỉ xảy ra khi lượng đã thay đổi đến giới hạn, tức là đến điểm nút, đến độ nên muốn tạo ra bước nhảy thì phải thực hiện quá trình tích lũy về lượng."
+                ],
+                "excerpt": "trong hoạt động nhận thức và hoạt động thực tiễn phải biết tích lũy về lượng để có biến đổi về chất; không được nôn nóng cũng như không được bảo thủ. Bước nhảy làm cho chất mới ra đời, thay thế chất cũ là hình thức tất yếu của sự vận động, phát triển của mọi sự vật, hiện tượng; nhưng sự thay đổi về chất do thực hiện bước nhảy gây nên chỉ xảy ra khi lượng đã thay đổi đến giới hạn, tức là đến điểm nút, đến độ nên muốn tạo ra bước nhảy thì phải thực hiện quá trình tích lũy về lượng. Thứ hai, khi lượng đã đạt đến điểm nút thì thực hiện bước nhảy là yêu cầu khách quan của sự vận động của sự vật, hiện tượng; tư tưởng nôn nóng thường biểu hiện ở chỗ không chú ý thỏa đáng đến sự tích lũy về lượng mà cho rằng sự phát triển của sự vật, hiện tượng chỉ là những bước nhảy liên tục; ngược lại, tư tưởng bảo thủ thường biểu hiện ở chỗ không dám thực hiện bước nhảy, coi sự phát triển chỉ là những thay đổi về lượng. Do vậy, cần khắc phục cả hai biểu hiện trên. Thứ ba, sự tác động của quy luật này đòi hỏi phải có thái độ khách quan, khoa học và quyết tâm thực hiện bước nhảy; tuy đều",
+                "sourceLocation": "Chương 2 · II- PHÉP BIỆN CHỨNG DUY VẬT › 2. Nội dung của phép biện chứng duy vật › c) Các quy luật cơ bản của phép biện chứng duy vật › Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại · tr. 244 · bản Markdown, dòng 2511–2515",
+                "file": "780897357-SACH-Giao-trinh-triết-học-Mac-Le-Nin-Danh-cho-bậc-đại-học-hệ-khong-chuyen-lý-luận-chinh-trị-đa-mở-khoa.md",
+                "lineStart": 2511,
+                "lineEnd": 2515,
+                "printedPageStart": 244,
+                "printedPageEnd": 244
+              }
+            ],
+            "evidenceQuotes": [
+              {
+                "turnId": "chapter-2-quantity-quality-turn-0",
+                "quote": "Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+              }
+            ],
+            "evidenceTurnIds": [
+              "chapter-2-quantity-quality-turn-0"
+            ],
+            "sourcePageStart": 244,
+            "sourcePageEnd": 244,
+            "sourceLineStart": 2511,
+            "sourceLineEnd": 2515,
+            "sourceFile": "780897357-SACH-Giao-trinh-triết-học-Mac-Le-Nin-Danh-cho-bậc-đại-học-hệ-khong-chuyen-lý-luận-chinh-trị-đa-mở-khoa.md",
+            "sourceLocation": "Chương 2 · II- PHÉP BIỆN CHỨNG DUY VẬT › 2. Nội dung của phép biện chứng duy vật › c) Các quy luật cơ bản của phép biện chứng duy vật › Quy luật chuyển hóa từ những thay đổi về lượng dẫn đến những thay đổi về chất và ngược lại · tr. 244 · bản Markdown, dòng 2511–2515"
+          }
+        ],
+        "diagnostics": {
+          "totalSections": 119,
+          "indexedSections": 90,
+          "indexedUnits": 164,
+          "indexedChunks": 817,
+          "candidatePassages": 9,
+          "candidateUnits": 8,
+          "candidateChapters": [
+            1,
+            2,
+            3
+          ],
+          "transcriptTurns": 1,
+          "evidenceTurns": 1,
+          "reviewedEvidenceTurns": 1,
+          "modelBatches": 1,
+          "modelCalls": 2,
+          "semanticRoutes": 1,
+          "rejectedRoutes": 0,
+          "proposedMatches": 1,
+          "rejectedMatches": 0,
+          "duplicateMatches": 0,
+          "rejectionReasons": {},
+          "sourceSha256": "9946dd9625fcb73f87c80c8ec7a79e0ac65aba343ddf841fc14d7832553b2d78"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "durationMs": 9008
+  },
+  "completed": true,
+  "lastUpdatedAt": "2026-10-02T04:02:14.570Z"
+}

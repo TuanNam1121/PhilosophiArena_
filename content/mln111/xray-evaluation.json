@@ -1,0 +1,1143 @@
+{
+  "version": 2,
+  "scope": "Source-integrity and passage/unit recall checks are offline. Semantic acceptance/rejection is evaluated separately through the production X-Ray service with the configured live model; expected sources are fixed, source-grounded cases, never sent as answers to the model.",
+  "positiveCases": [
+    {
+      "id": "chapter-1-materialism-idealism",
+      "question": "Ý thức có trước thế giới vật chất hay phản ánh một hiện thực tồn tại độc lập?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Hai cách giải thích bất đồng ở chỗ: một bên xem tinh thần là cái có trước, bên kia cho rằng thế giới vật chất tồn tại khách quan, không phụ thuộc việc ta có nhận biết nó hay không."
+        }
+      ],
+      "why": "Lập luận phân biệt trực tiếp hai lập trường về quan hệ giữa vật chất và ý thức.",
+      "expectedSources": [
+        {
+          "sectionId": "ch1-i-2-b",
+          "titleIncludes": [
+            "Chủ nghĩa duy vật",
+            "Chủ nghĩa duy tâm"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch1-i-2-b",
+          "titleIncludes": [
+            "Chủ nghĩa duy vật",
+            "Chủ nghĩa duy tâm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-1-knowability",
+      "question": "Con người có thể hiểu hiện thực khách quan hay chỉ tiếp cận được những gì giác quan bày ra?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Nếu tri thức chỉ là cảm giác chủ quan thì ta không thể giải thích vì sao nhận thức ngày càng kiểm tra và sửa sai được. Cần phân biệt khả năng biết thế giới với giới hạn của từng lần nhận thức."
+        }
+      ],
+      "why": "Lập luận trực tiếp về khả năng nhận thức thế giới và giới hạn nhận thức.",
+      "expectedSources": [
+        {
+          "sectionId": "ch1-i-2-c",
+          "titleIncludes": [
+            "Thuyết có thể biết"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch1-i-2-c",
+          "titleIncludes": [
+            "Thuyết có thể biết"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-1-dialectical-method",
+      "question": "Có nên đánh giá một hiện tượng chỉ từ một thời điểm riêng lẻ?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Cắt một sự vật khỏi quan hệ của nó rồi xem nó bất biến sẽ che mất quá trình hình thành và biến đổi. Muốn hiểu đầy đủ cần đặt nó trong liên hệ và vận động."
+        }
+      ],
+      "why": "Lập luận đối lập cách nhìn cô lập, đứng im với cách xem xét trong liên hệ và vận động.",
+      "expectedSources": [
+        {
+          "sectionId": "ch1-i-3-a",
+          "titleIncludes": [
+            "Phương pháp biện chứng",
+            "Phương pháp siêu hình"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch1-i-3-a",
+          "titleIncludes": [
+            "Phương pháp biện chứng",
+            "Phương pháp siêu hình"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-2-practice-and-cognition",
+      "question": "AI có khiến sinh viên lười suy nghĩ không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Không thể kết luận chỉ từ số lần dùng AI. Muốn kiểm tra giả thuyết về hiệu quả học tập, cần tổ chức một thử nghiệm trong lớp, thu kết quả thực tế và dựa vào kết quả ấy để sửa lại nhận định ban đầu."
+        }
+      ],
+      "why": "Lập luận yêu cầu kiểm tra nhận thức và năng lực qua hoạt động thực tiễn, không chỉ qua dự đoán.",
+      "expectedSources": [
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Vai trò của thực tiễn"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Vai trò của thực tiễn"
+          ]
+        },
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Thực tiễn và vai trò"
+          ]
+        },
+        {
+          "sectionId": "ch2-iii-2-d",
+          "titleIncludes": [
+            "Quan niệm về chân lý"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-2-quantity-quality",
+      "question": "Dùng AI thường xuyên có làm thay đổi năng lực học tập không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        }
+      ],
+      "why": "Lập luận có tích lũy về lượng, ngưỡng và bước chuyển về chất.",
+      "expectedSources": [
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-2-matter-consciousness",
+      "question": "Công nghệ và ý chí cá nhân tác động qua lại thế nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Điều kiện vật chất tạo giới hạn và khả năng cho lựa chọn, nhưng con người vẫn có thể nhận thức hoàn cảnh rồi hành động để thay đổi nó. Không thể lấy ý muốn thay cho điều kiện khách quan, cũng không nên xem con người hoàn toàn thụ động."
+        }
+      ],
+      "why": "Lập luận nối vai trò quyết định của điều kiện vật chất với tính độc lập tương đối và tác động trở lại của ý thức. Cần nguồn cho cả hai chiều, không tính đoạn chỉ nói ý thức tác động trở lại là đã phủ đủ chiều vật chất quyết định.",
+      "expectedSources": [
+        {
+          "sectionId": "ch2-i-3-b",
+          "titleIncludes": [
+            "Vật chất quyết định"
+          ]
+        },
+        {
+          "sectionId": "ch2-i-3-b",
+          "titleIncludes": [
+            "Ý thức có tính độc lập"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-i-3-b",
+          "titleIncludes": [
+            "Vật chất quyết định",
+            "Ý thức có tính độc lập"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-2-cause-and-effect",
+      "question": "Nếu kết quả học tập thay đổi sau khi dùng AI, đã đủ để nói AI là nguyên nhân chưa?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Một việc xảy ra trước kết quả chưa chắc đã sinh ra kết quả ấy. Cần xem những điều kiện đi kèm, cơ chế tác động và các nguyên nhân khác thay vì suy từ tương quan thành quan hệ nhân quả."
+        }
+      ],
+      "why": "Lập luận phân biệt nguyên nhân, điều kiện và kết quả, đồng thời cảnh báo suy luận nhân quả vội vàng.",
+      "expectedSources": [
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nguyên nhân và kết quả"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nguyên nhân và kết quả"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-2-practice-across-turns",
+      "question": "Làm thế nào biết người học thật sự hiểu bài?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Một dự đoán về cách học mới chưa tự nó chứng minh dự đoán ấy đúng."
+        },
+        {
+          "role": "user",
+          "dialogue": "Tôi muốn tổ chức một hoạt động thực nghiệm trong lớp học và quan sát xem kết quả có đúng với dự đoán ban đầu hay không."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Khi đem điều đã hiểu tổ chức thành hoạt động thử nghiệm cụ thể, kết quả thực tế cho thấy nhận thức có đứng vững hay cần sửa lại."
+        }
+      ],
+      "why": "Bằng chứng được nối qua nhiều lượt; việc vận dụng thực tiễn dùng để kiểm tra và điều chỉnh nhận thức.",
+      "expectedSources": [
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Vai trò của thực tiễn"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Vai trò của thực tiễn"
+          ]
+        },
+        {
+          "sectionId": "ch2-iii-2-b",
+          "titleIncludes": [
+            "Thực tiễn và vai trò"
+          ]
+        },
+        {
+          "sectionId": "ch2-iii-2-d",
+          "titleIncludes": [
+            "Quan niệm về chân lý"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-social-conditions-and-agency",
+      "question": "Thuật toán có làm mất tự do lựa chọn không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Cách làm ăn và điều kiện sinh sống của một cộng đồng góp phần hình thành những quan niệm chung của cộng đồng đó. Các quan niệm ấy cũng có thể thúc đẩy họ thay đổi cách sống và tổ chức đời sống vật chất."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Cá nhân không đứng ngoài những quan hệ xã hội đó: hoàn cảnh góp phần định hình khả năng lựa chọn, nhưng con người cũng hành động để tái tạo hoặc thay đổi các quan hệ ấy."
+        }
+      ],
+      "why": "Lập luận nối điều kiện xã hội với ý thức, đồng thời giữ quan hệ giữa cá nhân và xã hội. Định nghĩa tồn tại xã hội làm rõ sinh hoạt và điều kiện vật chất được lời thoại nêu, có thể phối hợp với đoạn quan hệ hai chiều để giải thích liên hệ.",
+      "expectedSources": [
+        {
+          "sectionId": "ch3-iv-3",
+          "titleIncludes": [
+            "Quan hệ biện chứng",
+            "Ý thức xã hội tác động trở lại"
+          ]
+        },
+        {
+          "sectionId": "ch3-v-3-a",
+          "titleIncludes": [
+            "Quan hệ giữa cá nhân và xã hội"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-iv-3",
+          "titleIncludes": [
+            "Quan hệ biện chứng",
+            "Ý thức xã hội tác động trở lại"
+          ]
+        },
+        {
+          "sectionId": "ch3-v-3-a",
+          "titleIncludes": [
+            "Quan hệ giữa cá nhân và xã hội"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-1-a",
+          "titleIncludes": [
+            "Khái niệm tồn tại xã hội"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-1-b",
+          "titleIncludes": [
+            "Các yếu tố cơ bản của tồn tại xã hội"
+          ],
+          "quoteIncludesAll": [
+            "Phương thức sản xuất đời sống vật chất quyết định"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-base-and-superstructure",
+      "question": "Thay đổi kinh tế có thể làm đổi luật pháp và thiết chế xã hội không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Khi cách tổ chức sản xuất và các quan hệ kinh tế thay đổi, những thiết chế chính trị, pháp luật và tư tưởng cũng chịu sức ép biến đổi. Tuy vậy, các thiết chế ấy có thể tác động ngược trở lại đời sống kinh tế."
+        }
+      ],
+      "why": "Lập luận mô tả quan hệ hai chiều giữa cơ sở hạ tầng và kiến trúc thượng tầng. Đoạn mở đầu mục b nêu trực tiếp quan hệ hai chiều nên cũng đủ căn cứ; định nghĩa ở mục a có thể giải thích các thiết chế, không thay cho bằng chứng quan hệ.",
+      "expectedSources": [
+        {
+          "sectionId": "ch3-i-3-b",
+          "titleIncludes": [
+            "Vai trò quyết định",
+            "Sự tác động trở lại",
+            "Quy luật về mối quan hệ biện chứng"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-i-3-b",
+          "titleIncludes": [
+            "Vai trò quyết định",
+            "Sự tác động trở lại",
+            "Quy luật về mối quan hệ biện chứng"
+          ]
+        },
+        {
+          "sectionId": "ch3-i-3-a",
+          "titleIncludes": [
+            "Khái niệm cơ sở hạ tầng"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-class-conflict",
+      "question": "Vì sao xung đột về quyền lợi giữa các nhóm có thể dẫn đến thay đổi xã hội?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Khi các nhóm đứng ở những vị trí khác nhau trong quan hệ sản xuất và có lợi ích cơ bản đối lập, mâu thuẫn lợi ích có thể biểu hiện thành đấu tranh xã hội; cần xem điều kiện lịch sử cụ thể của nó."
+        }
+      ],
+      "why": "Lập luận nêu cơ sở lợi ích và điều kiện xã hội của đấu tranh giai cấp. Mục định nghĩa giai cấp cũng giải thích vị trí trong quan hệ sản xuất và lợi ích đối lập. Vai trò làm động lực lịch sử chưa có trong lời thoại nên không tự động được phép. Nguồn tương đương tại dòng 3514–3520 trực tiếp nối vị trí sản xuất, lợi ích đối lập và xung đột xã hội; chỉ chấp nhận thay cho mục đấu tranh khi câu trích có đủ các chi tiết đó, không phải bất kỳ đoạn định nghĩa giai cấp nào.",
+      "expectedSources": [
+        {
+          "anyOf": [
+            {
+              "sectionId": "ch3-ii-1-b",
+              "titleIncludes": [
+                "Tính tất yếu và thực chất"
+              ]
+            },
+            {
+              "sectionId": "ch3-ii-1-a",
+              "titleIncludes": [
+                "Giai cấp"
+              ],
+              "quoteIncludesAll": [
+                "lợi ích cơ bản",
+                "xung đột xã hội",
+                "vị trí"
+              ]
+            }
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-ii-1-b",
+          "titleIncludes": [
+            "Tính tất yếu và thực chất"
+          ]
+        },
+        {
+          "sectionId": "ch3-ii-1-a",
+          "titleIncludes": [
+            "Giai cấp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-state-and-power",
+      "question": "Nhà nước có đứng ngoài mọi quan hệ lợi ích trong xã hội không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Muốn hiểu nhà nước không thể chỉ nhìn các cơ quan và thủ tục của nó; cần xem quyền lực ấy hình thành trong những mâu thuẫn xã hội nào và phục vụ những quan hệ lợi ích nào."
+        }
+      ],
+      "why": "Lập luận đặt bản chất nhà nước trong các quan hệ và mâu thuẫn xã hội.",
+      "expectedSources": [
+        {
+          "sectionId": "ch3-iii-1-b",
+          "titleIncludes": [
+            "Bản chất của nhà nước"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-iii-1-b",
+          "titleIncludes": [
+            "Bản chất của nhà nước"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-alienated-labor",
+      "question": "Công nghệ có thể khiến người lao động mất quyền làm chủ công việc không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Khi người lao động không kiểm soát quá trình và sản phẩm lao động của mình, hoạt động vốn do họ thực hiện có thể trở thành một sức mạnh xa lạ chi phối họ."
+        }
+      ],
+      "why": "Lập luận mô tả sự tha hóa gắn với quá trình và sản phẩm lao động.",
+      "expectedSources": [
+        {
+          "sectionId": "ch3-v-2-a",
+          "titleIncludes": [
+            "Thực chất của hiện tượng tha hóa"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-v-2-a",
+          "titleIncludes": [
+            "Thực chất của hiện tượng tha hóa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter-3-individual-and-society",
+      "question": "Lựa chọn của một người chỉ do cá tính riêng quyết định sao?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Cá nhân hình thành và hành động trong những quan hệ xã hội cụ thể. Bối cảnh góp phần định hình khả năng lựa chọn, nhưng con người cũng tham gia tái tạo hoặc thay đổi các quan hệ ấy."
+        }
+      ],
+      "why": "Lập luận xem xét quan hệ cá nhân và xã hội thay vì quy hành vi hoàn toàn về một phía. Đoạn dòng 4839–4849 cũng nêu trực tiếp con người hoạt động trên những điều kiện đã có và cải biến chúng. Chấp nhận nguồn tương đương này khi câu trích đủ hai vế, không chấp nhận đoạn chỉ nói chung về lịch sử.",
+      "expectedSources": [
+        {
+          "anyOf": [
+            {
+              "sectionId": "ch3-v-3-a",
+              "titleIncludes": [
+                "Quan hệ giữa cá nhân và xã hội"
+              ]
+            },
+            {
+              "sectionId": "ch3-v-1-d",
+              "titleIncludes": [
+                "Con người vừa là chủ thể"
+              ],
+              "quoteIncludesAll": [
+                "điều kiện cũ",
+                "cải biến"
+              ]
+            }
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-v-3-a",
+          "titleIncludes": [
+            "Quan hệ giữa cá nhân và xã hội"
+          ]
+        },
+        {
+          "sectionId": "ch3-v-1-d",
+          "titleIncludes": [
+            "Con người vừa là chủ thể"
+          ],
+          "quoteIncludesAll": [
+            "điều kiện cũ",
+            "cải biến"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "six-categories-one-section",
+      "question": "Những cách suy luận này khác nhau thế nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Mỗi sinh viên là một trường hợp riêng, nhưng các quy luật chung của việc học chỉ tồn tại thông qua những trường hợp cụ thể và không xóa bỏ các nét đơn nhất của từng người."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Hai việc xảy ra nối tiếp nhau chưa chứng minh việc trước là nguyên nhân của kết quả sau; cần chỉ ra tác động đã sinh ra biến đổi và điều kiện kèm theo."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Xu hướng tất yếu do những nguyên nhân cơ bản quyết định, còn các biến cố tình cờ có thể thay đổi cách nó biểu hiện. Không đồng nhất ngẫu nhiên với tất nhiên."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Nội dung học tập thay đổi có thể đòi hỏi thay đổi hình thức tổ chức; hình thức phù hợp thúc đẩy nội dung, còn hình thức cũ có thể kìm hãm nó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Điểm số chỉ là biểu hiện bên ngoài; muốn hiểu năng lực cần tìm các quan hệ bản chất ổn định ẩn sau biểu hiện và kiểm tra qua nhiều tình huống."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Một công cụ mở ra khả năng nhưng chưa phải hiện thực; phải có những điều kiện cụ thể và hành động thích hợp thì khả năng ấy mới thành hiện thực."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Cái riêng và cái chung"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nguyên nhân và kết quả"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Tất nhiên và ngẫu nhiên"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nội dung và hình thức"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Bản chất và hiện tượng"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Khả năng và hiện thực"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Cái riêng và cái chung"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nguyên nhân và kết quả"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Tất nhiên và ngẫu nhiên"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Nội dung và hình thức"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Bản chất và hiện tượng"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-b",
+          "titleIncludes": [
+            "Khả năng và hiện thực"
+          ]
+        }
+      ],
+      "why": "Đối chứng có lập luận; nguồn kỳ vọng được gắn tới tiểu mục cụ thể, không chỉ ID mục lớn."
+    },
+    {
+      "id": "three-laws-one-section",
+      "question": "Sự thay đổi trong cách học có những cơ chế nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Trong chính một quá trình học, nhu cầu dựa vào công cụ để hoàn thành nhanh và nhu cầu tự làm chủ kiến thức có thể cùng tồn tại, ràng buộc nhưng cũng kéo theo hai hướng đối lập. Sự tác động giữa chúng có thể buộc người học thay đổi cách học."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Cách học mới vượt bỏ cách cũ nhưng giữ lại những yếu tố hợp lý của nó. Khi cách mới lại bị vượt qua, một số yếu tố của giai đoạn đầu có thể trở lại trên trình độ cao hơn; đây là một quá trình phát triển qua những lần phủ định kế tiếp."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật thống nhất"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật phủ định"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật thống nhất"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật phủ định"
+          ]
+        }
+      ],
+      "why": "Đối chứng có lập luận; nguồn kỳ vọng được gắn tới tiểu mục cụ thể, không chỉ ID mục lớn."
+    },
+    {
+      "id": "social-consciousness-forms",
+      "question": "Các hình thái ý thức xã hội biểu đạt đời sống chung theo những cách nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Những quan niệm về tổ chức quyền lực và quyền lợi của các nhóm xã hội định hướng cách con người nhìn nhận việc quản lý xã hội."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Những quan niệm về quyền, nghĩa vụ và điều được phép hoặc bị cấm biểu đạt đời sống xã hội dưới hình thức pháp lý."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Cộng đồng đánh giá thiện và ác, điều nên làm và trách nhiệm bằng chuẩn mực tự nguyện, phong tục và dư luận chứ không chỉ bằng cưỡng chế pháp luật."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Con người cảm nhận và biểu đạt cái đẹp, lý tưởng thẩm mỹ qua hình tượng trong tác phẩm nghệ thuật."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Niềm tin vào những lực lượng siêu nhiên, nghi lễ và sự thờ phụng là một cách phản ánh đời sống và nhu cầu tinh thần của cộng đồng."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Việc tổ chức tri thức thành khái niệm, giả thuyết và lý thuyết, rồi kiểm tra bằng nghiên cứu, phản ánh đời sống dưới hình thức tri thức khoa học."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Những quan niệm khái quát về thế giới, con người và mối quan hệ giữa tư duy với tồn tại định hướng phương pháp nhận thức và hoạt động."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức chính trị"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức pháp quyền"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức đạo đức"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức nghệ thuật"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức tôn giáo"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức lý luận"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức triết học"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức chính trị"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức pháp quyền"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức đạo đức"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức nghệ thuật"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức tôn giáo"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức lý luận"
+          ]
+        },
+        {
+          "sectionId": "ch3-iv-2-d",
+          "titleIncludes": [
+            "Ý thức triết học"
+          ]
+        },
+        {
+          "sectionId": "ch1-i-1-b",
+          "titleIncludes": [
+            "Khái niệm triết học"
+          ]
+        }
+      ],
+      "why": "Đối chứng có lập luận; nguồn kỳ vọng được gắn tới tiểu mục cụ thể, không chỉ ID mục lớn. Định nghĩa triết học ở Chương 1 cũng nêu trực tiếp hệ thống quan điểm lý luận chung về thế giới, con người và tư duy; nếu dùng phải bám đúng lượt bàn về hình thái triết học, không suy ra từ tên triết gia."
+    },
+    {
+      "id": "worldview-outside-anchors",
+      "question": "Vì sao cùng một sự kiện, người ta nhìn nhận và chọn hành động khác nhau?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Những quan niệm và niềm tin khái quát về thế giới, vị trí con người và điều có giá trị định hướng cách ta hiểu một sự kiện và lựa chọn hành động. Chúng không chỉ là một ý kiến rời rạc về sự kiện ấy."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch1-i-1-d",
+          "titleIncludes": [
+            "Thế giới quan",
+            "Hạt nhân lý luận"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch1-i-1-d",
+          "titleIncludes": [
+            "Thế giới quan",
+            "Hạt nhân lý luận"
+          ]
+        }
+      ],
+      "why": "Đối chứng có lập luận; nguồn kỳ vọng được gắn tới tiểu mục cụ thể, không chỉ ID mục lớn."
+    },
+    {
+      "id": "freedom-and-community",
+      "question": "Tự do của cá nhân có tách khỏi sự phát triển của cộng đồng không?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Sự phát triển tự do của một người cần những điều kiện xã hội cho phép họ thực hiện khả năng của mình, và sự phát triển của từng người cũng góp phần tạo điều kiện cho những người khác. Không thể coi giải phóng cá nhân và phát triển cộng đồng là hai việc hoàn toàn tách biệt."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch3-v-2-c",
+          "titleIncludes": [
+            "Sự phát triển tự do"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch3-v-2-c",
+          "titleIncludes": [
+            "Sự phát triển tự do"
+          ]
+        }
+      ],
+      "why": "Đối chứng có lập luận; nguồn kỳ vọng được gắn tới tiểu mục cụ thể, không chỉ ID mục lớn."
+    },
+    {
+      "id": "long-transcript-early-and-late",
+      "question": "Các quan niệm định hướng và quá trình tích lũy ảnh hưởng đến thay đổi trong học tập như thế nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Những quan niệm và niềm tin khái quát về thế giới, vị trí con người và điều có giá trị định hướng cách ta hiểu một sự kiện và lựa chọn hành động. Chúng không chỉ là một ý kiến rời rạc về sự kiện ấy."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 1, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 2, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 3, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 4, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 5, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 6, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 7, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 8, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 9, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 10, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 11, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 12, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 13, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 14, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 15, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 16, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 17, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 18, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 19, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 20, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 21, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 22, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 23, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 24, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 25, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 26, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 27, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 28, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 29, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 30, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 31, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 32, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 33, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 34, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 35, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 36, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 37, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 38, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        },
+        {
+          "role": "thinker",
+          "dialogue": "Ở tình huống học tập thứ 39, Một thay đổi nhỏ lặp đi lặp lại chưa tự nó chứng minh năng lực đã đổi. Cần xác định mức tích lũy, ngưỡng chuyển biến và biểu hiện khác về chất sau bước chuyển đó."
+        }
+      ],
+      "expectedSources": [
+        {
+          "sectionId": "ch1-i-1-d",
+          "titleIncludes": [
+            "Thế giới quan",
+            "Hạt nhân lý luận"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        }
+      ],
+      "allowedSources": [
+        {
+          "sectionId": "ch1-i-1-d",
+          "titleIncludes": [
+            "Thế giới quan",
+            "Hạt nhân lý luận"
+          ]
+        },
+        {
+          "sectionId": "ch2-ii-2-c",
+          "titleIncludes": [
+            "Quy luật chuyển hóa"
+          ]
+        }
+      ],
+      "why": "40 lượt có căn cứ độc lập ở đầu và cuối: thế giới quan không được mất khi các lượt sau tập trung vào lượng–chất. Chỉ các nguồn đã cố định từ hai ca gốc được chấp nhận."
+    }
+  ],
+  "negativeCases": [
+    {
+      "id": "keyword-only-mln-terms",
+      "question": "AI đang phổ biến. Tự do là điều quan trọng và xã hội ngày nay phức tạp.",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "AI, tự do, xã hội và thực tiễn đều là những chủ đề đáng quan tâm."
+        }
+      ],
+      "why": "Chỉ nêu chủ đề/thuật ngữ, chưa có lập luận nối với nội dung của một khái niệm.",
+      "expectedSources": [],
+      "allowedSources": []
+    },
+    {
+      "id": "quantity-quality-name-drop",
+      "question": "Điểm số và năng lực có liên quan thế nào?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Điểm số là lượng, năng lực là chất, vậy chắc chắn có quy luật lượng và chất."
+        }
+      ],
+      "why": "Chỉ gán nhãn lượng/chất, không chỉ ra tích lũy, độ, ngưỡng hay bước chuyển.",
+      "expectedSources": [],
+      "allowedSources": []
+    },
+    {
+      "id": "paper-exercises-are-not-practice",
+      "question": "Đoạn nói này đã đủ để liên hệ một khái niệm triết học chưa?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Tôi giải thêm vài bài tập lý thuyết trên giấy. Vậy là đã kiểm nghiệm chân lý bằng thực tiễn."
+        }
+      ],
+      "expectedSources": [],
+      "allowedSources": [],
+      "why": "Chưa nêu hoạt động vật chất/thực nghiệm cải biến hay kiểm tra hiện thực; chỉ gán tên thực tiễn cho bài tập lý thuyết."
+    },
+    {
+      "id": "disagreement-is-not-internal-contradiction",
+      "question": "Đoạn nói này đã đủ để liên hệ một khái niệm triết học chưa?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Marx thích học với AI, Socrates không thích. Hai người cãi nhau, vì thế có mâu thuẫn biện chứng."
+        }
+      ],
+      "expectedSources": [],
+      "allowedSources": [],
+      "why": "Bất đồng giữa hai người chưa xác định các mặt đối lập trong cùng một sự vật."
+    },
+    {
+      "id": "single-replacement-is-not-double-negation",
+      "question": "Đoạn nói này đã đủ để liên hệ một khái niệm triết học chưa?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Tôi đổi cuốn vở cũ sang cuốn mới và giữ vài ghi chép. Vậy gọi là phủ định của phủ định."
+        }
+      ],
+      "expectedSources": [],
+      "allowedSources": [],
+      "why": "Đổi vật dụng/giữ ghi chép chưa có hai lần phủ định biện chứng và xu hướng phát triển."
+    },
+    {
+      "id": "personal-opinion-is-not-social-consciousness",
+      "question": "Đoạn nói này đã đủ để liên hệ một khái niệm triết học chưa?",
+      "turns": [
+        {
+          "role": "thinker",
+          "dialogue": "Tôi thấy mình học nhanh hơn nhờ AI, vì thế ý kiến của tôi chính là ý thức xã hội."
+        }
+      ],
+      "expectedSources": [],
+      "allowedSources": [],
+      "why": "Ý kiến riêng đơn lẻ chưa xác định hệ quan niệm của cộng đồng và quan hệ với tồn tại xã hội."
+    }
+  ]
+}
