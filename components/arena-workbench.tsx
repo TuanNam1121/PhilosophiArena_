@@ -9,10 +9,12 @@ import {
   THINKER_IDS,
   THINKER_LIST,
   THINKERS,
+  makeDemoQuiz,
   makeDemoTurn,
   type ArenaAction,
   type ArenaTurn,
   type CardType,
+  type QuizQuestion,
   type LensReflectionResult,
   type RelationType,
   type ThinkerId,
@@ -22,9 +24,9 @@ import {
 } from "@/lib/arena";
 import { MLN_CONCEPTS_BY_ID } from "@/lib/mln111-concepts";
 
-type Screen = "setup" | "session" | "xray" | "lens";
+type Screen = "setup" | "session" | "xray" | "lens" | "quiz";
 type TeamMode = "auto" | "custom" | "full";
-type RequestKind = "start" | "continue" | "contribute" | "ask" | "challenge" | "invite" | "xray" | "reflect";
+type RequestKind = "start" | "continue" | "contribute" | "ask" | "challenge" | "invite" | "xray" | "reflect" | "quiz";
 
 const ACTION_LABEL: Record<ArenaAction, string> = {
   frame: "LÀM RÕ CÂU HỎI",
@@ -46,6 +48,7 @@ const BUSY_LABEL: Record<RequestKind, string> = {
   invite: "Đang mời thêm một góc nhìn…",
   xray: "Đang đối chiếu lập luận với khái niệm…",
   reflect: "Đang gợi ý nhìn lại lập trường của bạn…",
+  quiz: "Đang soạn câu hỏi trắc nghiệm…",
 };
 
 const CARD_LABEL: Record<CardType, string> = {
@@ -184,6 +187,10 @@ export function ArenaWorkbench({
   const [xrayAnalysisState, setXrayAnalysisState] = useState<XRayAnalysisState | null>(null);
   const [xrayDiagnostics, setXrayDiagnostics] = useState<XRayDiagnostics | null>(null);
   const [visibleXRayCount, setVisibleXRayCount] = useState(4);
+  const [quiz, setQuiz] = useState<QuizQuestion[] | null>(null);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [quizPicked, setQuizPicked] = useState<number | null>(null);
+  const [quizScore, setQuizScore] = useState(0);
   const [busy, setBusy] = useState<RequestKind | null>(null);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -225,6 +232,15 @@ export function ArenaWorkbench({
     .map((id) => turns.find((turn) => turn.id === id))
     .filter((turn): turn is ArenaTurn => Boolean(turn && turn.role === "user"));
 
+  const hasDiscussion = turns.some((turn) => turn.role === "thinker" || turn.role === "user");
+  const currentQuizQuestion = quiz?.[quizIndex] ?? null;
+  const quizSpeakers = [...new Set(
+    (currentQuizQuestion?.evidenceTurnIds ?? [])
+      .map((id) => turns.find((turn) => turn.id === id))
+      .map((turn) => turn?.role === "user" ? "Bạn" : turn?.speakerId ? THINKERS[turn.speakerId].name : turn ? "Hội đồng" : null)
+      .filter((name): name is string => Boolean(name)),
+  )];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [screen]);
@@ -262,6 +278,12 @@ export function ArenaWorkbench({
     if (!aiConfigured) {
       if (kind === "reflect") {
         setLensReflection(null);
+        setBusy(null);
+        return;
+      }
+
+      if (kind === "quiz") {
+        startQuiz(makeDemoQuiz(turns));
         setBusy(null);
         return;
       }
@@ -322,7 +344,7 @@ export function ArenaWorkbench({
           selectedSpeakerId: options.speakerId ?? null,
           targetId: options.targetId ?? null,
           userInput: options.userInput,
-          turns: (kind === "xray" ? turns : turns.slice(-32)).map((turn) => ({
+          turns: (kind === "xray" || kind === "quiz" ? turns : turns.slice(-32)).map((turn) => ({
             id: turn.id,
             role: turn.role,
             speakerId: turn.speakerId,
@@ -354,6 +376,11 @@ export function ArenaWorkbench({
 
       if (kind === "reflect") {
         setLensReflection(result.result as LensReflectionResult);
+        return;
+      }
+
+      if (kind === "quiz") {
+        startQuiz(result.result as QuizQuestion[]);
         return;
       }
 
@@ -438,6 +465,7 @@ export function ArenaWorkbench({
     setLensDraft("");
     setLensSaved(false);
     setLensReflection(null);
+    setQuiz(null);
     void requestArena("start", { autoSelect: teamMode === "auto" });
   }
 
@@ -477,6 +505,7 @@ export function ArenaWorkbench({
     setXrayMode(null);
     setXrayAnalysisState(null);
     setXrayDiagnostics(null);
+    setQuiz(null);
     setError("");
     setNotice("");
     setBusy(null);
@@ -487,6 +516,25 @@ export function ArenaWorkbench({
     if (!lensDraft.trim()) return;
     setLensDraft(lensDraft.trim());
     setLensSaved(true);
+  }
+
+  function startQuiz(questions: QuizQuestion[]) {
+    setQuiz(questions);
+    setQuizIndex(0);
+    setQuizPicked(null);
+    setQuizScore(0);
+    setScreen("quiz");
+  }
+
+  function pickQuizOption(index: number) {
+    if (!currentQuizQuestion || quizPicked !== null) return;
+    setQuizPicked(index);
+    if (index === currentQuizQuestion.answerIndex) setQuizScore((score) => score + 1);
+  }
+
+  function nextQuizQuestion() {
+    setQuizIndex((index) => index + 1);
+    setQuizPicked(null);
   }
 
   function openYourLens() {
@@ -944,9 +992,105 @@ export function ArenaWorkbench({
         )}
         <div className="result-actions">
           <button className="button-secondary" type="button" onClick={() => setScreen("session")}>← Trở lại Arena</button>
-          <button className="button-primary" type="button" onClick={openYourLens}>Viết lập trường của bạn <span aria-hidden="true">↗</span></button>
+          <div className="result-actions-group">
+            <button className="button-secondary" type="button" onClick={() => void requestArena("quiz")} disabled={busy !== null || !hasDiscussion}>
+              {busy === "quiz" ? "ĐANG SOẠN CÂU HỎI…" : "Làm trắc nghiệm"}
+            </button>
+            <button className="button-primary" type="button" onClick={openYourLens}>Viết lập trường của bạn <span aria-hidden="true">↗</span></button>
+          </div>
         </div>
         <footer className="page-footer"><span>LĂNG KÍNH · PHILOSOPHY X-RAY</span><span>03 / 04 · CONCEPT</span></footer>
+      </main>
+    );
+  }
+
+  if (screen === "quiz") {
+    const total = quiz?.length ?? 0;
+    const finished = quiz !== null && quizIndex >= total;
+    const letters = ["A", "B", "C", "D"];
+    return (
+      <main className="app-shell result-shell">
+        {header}
+        <section className="quiz-shell">
+          <div className="lens-overline"><span>✓</span><span className="overline-rule" /> ÔN TẬP TRẮC NGHIỆM</div>
+          <h1>Bạn còn nhớ<br /><em>những ý chính?</em></h1>
+          <p className="lens-question">{question}</p>
+          {!aiConfigured && (
+            <p className="quiz-demo-note">Bản xem trước: câu hỏi được ghép từ lời thoại trong phiên, chưa qua AI.</p>
+          )}
+          {error && <p className="inline-error" role="alert">{error}</p>}
+
+          {total === 0 ? (
+            <p className="lens-reflection-empty" role="status">Cuộc thảo luận chưa đủ ý để soạn câu hỏi. Hãy để Hội đồng trao đổi thêm rồi thử lại.</p>
+          ) : finished ? (
+            <section className="quiz-result" aria-live="polite">
+              <span className="eyebrow">KẾT QUẢ</span>
+              <strong>{quizScore} / {total}</strong>
+              <p>
+                {quizScore === total
+                  ? "Bạn đã nắm được toàn bộ ý chính của phiên."
+                  : quizScore >= total / 2
+                    ? "Bạn đã nắm phần lớn các ý chính. Có thể xem lại transcript ở những câu chưa đúng."
+                    : "Hãy quay lại Arena đọc lại transcript rồi thử lần nữa."}
+              </p>
+              <div className="quiz-actions">
+                <button type="button" className="button-primary" onClick={() => void requestArena("quiz")} disabled={busy !== null}>
+                  {busy === "quiz" ? "ĐANG SOẠN CÂU HỎI…" : "Làm lại"} <span aria-hidden="true">↻</span>
+                </button>
+              </div>
+            </section>
+          ) : currentQuizQuestion && (
+            <section className="quiz-card" aria-live="polite">
+              <div className="quiz-progress">
+                <span className="eyebrow">CÂU {quizIndex + 1} / {total}</span>
+                <span>{quizScore} đúng</span>
+              </div>
+              <div className="quiz-progress-bar" aria-hidden="true"><i style={{ width: `${(quizIndex / total) * 100}%` }} /></div>
+              <h2>{currentQuizQuestion.question}</h2>
+              <div className="quiz-options" role="group" aria-label="Các lựa chọn">
+                {currentQuizQuestion.options.map((option, index) => {
+                  const state = quizPicked === null
+                    ? ""
+                    : index === currentQuizQuestion.answerIndex
+                      ? " is-correct"
+                      : index === quizPicked
+                        ? " is-wrong"
+                        : " is-dimmed";
+                  return (
+                    <button
+                      key={index}
+                      type="button"
+                      className={"quiz-option" + state}
+                      onClick={() => pickQuizOption(index)}
+                      disabled={quizPicked !== null}
+                    >
+                      <span className="quiz-option-letter">{letters[index]}</span>
+                      <span>{option}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              {quizPicked !== null && (
+                <div className={"quiz-explanation" + (quizPicked === currentQuizQuestion.answerIndex ? " is-correct" : " is-wrong")}>
+                  <span className="eyebrow">
+                    {quizPicked === currentQuizQuestion.answerIndex ? "CHÍNH XÁC" : `CHƯA ĐÚNG · ĐÁP ÁN ${letters[currentQuizQuestion.answerIndex]}`}
+                  </span>
+                  <p>{currentQuizQuestion.explanation}</p>
+                  {quizSpeakers.length > 0 && <span className="quiz-source">Từ lượt của {quizSpeakers.join(", ")}</span>}
+                  <button type="button" className="button-primary" onClick={nextQuizQuestion}>
+                    {quizIndex + 1 < total ? "Câu tiếp theo" : "Xem kết quả"} <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+              )}
+            </section>
+          )}
+
+          <div className="lens-bottom-actions">
+            <button className="button-secondary" type="button" onClick={() => setScreen("session")}>← Trở lại Arena</button>
+            <button className="text-button" type="button" onClick={() => void requestArena("xray")} disabled={busy !== null}>Mở Philosophy X-Ray ↗</button>
+          </div>
+        </section>
+        <footer className="page-footer"><span>LĂNG KÍNH · ÔN TẬP</span><span>QUIZ</span></footer>
       </main>
     );
   }
@@ -1031,6 +1175,15 @@ export function ArenaWorkbench({
               </div>
             </section>
           )}
+          <section className="quiz-callout" aria-label="Ôn tập trắc nghiệm">
+            <div>
+              <span className="eyebrow">ÔN TẬP · TRẮC NGHIỆM</span>
+              <p>Kiểm tra lại những ý chính vừa được thảo luận trong phiên.</p>
+            </div>
+            <button type="button" className="button-secondary" onClick={() => void requestArena("quiz")} disabled={busy !== null || !hasDiscussion}>
+              {busy === "quiz" ? "ĐANG SOẠN CÂU HỎI…" : "Làm trắc nghiệm"} <span aria-hidden="true">↗</span>
+            </button>
+          </section>
           <div className="lens-bottom-actions">
             <button className="button-secondary" type="button" onClick={() => setScreen("xray")}>← X-Ray</button>
             <button className="text-button" type="button" onClick={resetSession}>Bắt đầu một vấn đề mới ↗</button>
@@ -1227,9 +1380,14 @@ export function ArenaWorkbench({
             <strong>{currentWorkingQuestion}</strong>
           </span>
         </div>
-        <button type="button" className="button-secondary" onClick={() => void requestArena("xray")} disabled={busy !== null || turns.length === 0}>
-          {busy === "xray" ? "ĐANG SOI CHIẾU…" : "Mở Philosophy X-Ray"} <span aria-hidden="true">↗</span>
-        </button>
+        <div className="session-bottom-actions">
+          <button type="button" className="button-secondary" onClick={() => void requestArena("quiz")} disabled={busy !== null || !hasDiscussion}>
+            {busy === "quiz" ? "ĐANG SOẠN CÂU HỎI…" : "Ôn tập trắc nghiệm"} <span aria-hidden="true">✓</span>
+          </button>
+          <button type="button" className="button-secondary" onClick={() => void requestArena("xray")} disabled={busy !== null || turns.length === 0}>
+            {busy === "xray" ? "ĐANG SOI CHIẾU…" : "Mở Philosophy X-Ray"} <span aria-hidden="true">↗</span>
+          </button>
+        </div>
       </section>
 
       <footer className="page-footer"><span>LĂNG KÍNH · PHILOSOPHY ARENA</span><span>02 / 04 · DISCUSSION</span></footer>

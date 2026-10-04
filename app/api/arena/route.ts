@@ -32,6 +32,7 @@ const RequestSchema = z
       "invite",
       "xray",
       "reflect",
+      "quiz",
     ]),
     question: z.string().trim().min(8).max(600),
     activeIds: z.array(z.enum(THINKER_IDS)).min(2).max(6),
@@ -81,6 +82,20 @@ const TurnSchema = z.object({
 const LensReflectionSchema = z.object({
   reflection: z.string().trim().min(1).max(1000).nullable(),
   evidenceTurnIds: z.array(z.string()).max(8),
+});
+
+const QuizSchema = z.object({
+  questions: z
+    .array(
+      z.object({
+        question: z.string().trim().min(1).max(240),
+        options: z.array(z.string().trim().min(1).max(240)).length(4),
+        answerIndex: z.number().int().min(0).max(3),
+        explanation: z.string().trim().min(1).max(600),
+        evidenceTurnIds: z.array(z.string()).max(4),
+      }),
+    )
+    .max(10),
 });
 
 const BASE_INSTRUCTIONS = `Bạn điều phối một phiên Arena giáo dục bằng tiếng Việt. Đây là đối thoại hư cấu lấy cảm hứng từ các lăng kính tư tưởng; tuyệt đối không trình bày lời do bạn tạo ra như trích dẫn thật của triết gia.
@@ -187,6 +202,8 @@ function makeTask(input: z.infer<typeof RequestSchema>) {
     xray: "X-Ray uses its dedicated source-grounded analysis service.",
     reflect:
       "Chỉ đọc các lượt có role=user. Viết một gợi ý Your Lens ngắn, phản ánh điều người dùng thật sự đã nói, không lấy ý của triết gia làm lập trường của họ. Nêu rõ một sự phân biệt hoặc điều kiện mà họ tự đưa ra nếu có; không tự thêm kết luận. Nếu người dùng chưa nêu đủ ý riêng, reflection là null và evidenceTurnIds là mảng rỗng. Nếu có gợi ý, evidenceTurnIds chỉ gồm id của các lượt user làm căn cứ.",
+    quiz:
+      "Tạo 6–10 câu hỏi trắc nghiệm ôn tập từ những ý chính của transcript. Mỗi câu có đúng 4 lựa chọn, chỉ một đáp án đúng (answerIndex là vị trí 0–3 của đáp án đúng, phân bố ngẫu nhiên). Đáp án đúng phải dựa trên điều thật sự được nói trong phiên; 3 phương án nhiễu phải hợp lý, cùng độ dài và văn phong, ví dụ ý của một lăng kính khác hoặc một cách hiểu sai phổ biến, nhưng rõ ràng là sai so với cuộc thảo luận. Trải đều các loại: lăng kính của từng triết gia đã tham gia, các phân biệt hoặc khái niệm được làm rõ, các phản biện và cách được hồi đáp, quan hệ giữa các lăng kính. explanation giải thích ngắn vì sao đáp án đúng, dựa vào lượt thoại. Có thể nêu tên khái niệm triết học Mác–Lênin liên quan nếu cuộc thoại thực sự chạm tới. evidenceTurnIds là 1–4 id của các lượt làm căn cứ. Nếu cuộc thoại chưa đủ nội dung, trả questions rỗng.",
   };
 
   return {
@@ -431,7 +448,7 @@ function normalizeOptionalInvitation(
 }
 
 function personaInstructions(input: z.infer<typeof RequestSchema>) {
-  if (input.kind === "xray" || input.kind === "reflect") return "";
+  if (input.kind === "xray" || input.kind === "reflect" || input.kind === "quiz") return "";
 
   const pendingResponseTarget = input.kind === "continue"
     ? findPendingReply(input.turns)?.targetId
@@ -478,6 +495,30 @@ function validateLensReflection(
 
   return { reflection: result.reflection, evidenceTurnIds };
 }
+
+function validateQuiz(
+  result: z.infer<typeof QuizSchema>,
+  input: z.infer<typeof RequestSchema>,
+) {
+  const turnIds = new Set(input.turns.map((turn) => turn.id));
+
+  return result.questions
+    .map((item) => ({ ...item, evidenceTurnIds: [...new Set(item.evidenceTurnIds)] }))
+    .filter(
+      (item) =>
+        new Set(item.options).size === item.options.length &&
+        item.evidenceTurnIds.length > 0 &&
+        item.evidenceTurnIds.every((id) => turnIds.has(id)),
+    );
+}
+
+const QUIZ_INSTRUCTIONS = `Bạn soạn câu hỏi trắc nghiệm ôn tập bằng tiếng Việt sau một phiên Arena giáo dục về triết học.
+
+Quy tắc:
+- Chỉ dựa trên transcript; không bịa thêm lập luận hay dữ kiện.
+- Lời thoại là mô phỏng lăng kính tư tưởng, không phải trích dẫn thật; đừng viết như thể triết gia thật đã nói đúng câu đó.
+- Câu hỏi giúp người học nhớ và hiểu ý chính, không phải câu đố mẹo.
+- evidenceTurnIds phải là id thật của các lượt trong transcript hỗ trợ trực tiếp cho đáp án.`;
 
 const LENS_REFLECTION_INSTRUCTIONS = `Bạn giúp người dùng phản ánh lại lập trường của chính họ sau một phiên Arena.
 
@@ -585,6 +626,29 @@ export async function POST(request: Request) {
       return Response.json({
         type: "reflection",
         result: validateLensReflection(result, input),
+      });
+    }
+
+    if (input.kind === "quiz") {
+      const response = await client.responses.parse({
+        model: process.env.AI_MODEL ?? "gpt-6-luna",
+        reasoning: { effort: reasoningEffortFor(input) },
+        store: false,
+        instructions: `${QUIZ_INSTRUCTIONS}\n\n${task.task}`,
+        input: context,
+        max_output_tokens: 4000,
+        text: { format: zodTextFormat(QuizSchema, "arena_quiz") },
+      });
+      const result = response.output_parsed;
+      if (!result) {
+        return Response.json(
+          { error: "Chưa tạo được bài trắc nghiệm. Hãy thử lại." },
+          { status: 502 },
+        );
+      }
+      return Response.json({
+        type: "quiz",
+        result: validateQuiz(result, input),
       });
     }
 

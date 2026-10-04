@@ -216,6 +216,154 @@ export interface LensReflectionResult {
   evidenceTurnIds: string[];
 }
 
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  answerIndex: number;
+  explanation: string;
+  evidenceTurnIds: string[];
+}
+
+const LENS_SUMMARIES: Record<ThinkerId, string> = {
+  socrates: "Cần làm rõ định nghĩa và giả định trước khi đi tới kết luận.",
+  hegel: "Hiện tượng phải được xem trong các quan hệ và quá trình vận động của nó.",
+  feuerbach: "Hãy quay về con người cụ thể với nhu cầu, cảm giác và quan hệ sống.",
+  marx: "Lựa chọn cá nhân được định hình bởi điều kiện vật chất và quan hệ xã hội.",
+  engels: "Cần chỉ ra cơ chế cụ thể qua đó các yếu tố tác động và biến đổi lẫn nhau.",
+  lenin: "Một nhận định phải được kiểm tra bằng thực tiễn với tiêu chí rõ ràng.",
+};
+
+const DISTRACTOR_CLAIMS = [
+  "Mọi hiện tượng đều do một nguyên nhân duy nhất quyết định.",
+  "Chỉ cần ý chí cá nhân là đủ để vượt qua mọi hoàn cảnh.",
+  "Cảm nhận cá nhân đã đủ làm tiêu chí đúng sai, không cần kiểm chứng.",
+  "Công nghệ tự nó quyết định hoàn toàn cách con người suy nghĩ.",
+  "Hai quan điểm khác nhau thì nhất định phải có một bên sai hoàn toàn.",
+];
+
+function shuffle<T>(items: T[]): T[] {
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    [result[index], result[swap]] = [result[swap], result[index]];
+  }
+  return result;
+}
+
+function keySentence(text: string) {
+  const sentences = text.split(/(?<=[.!?…])\s+/u);
+  const sentence = sentences[0].length < 40 && sentences[1]
+    ? `${sentences[0]} ${sentences[1]}`
+    : sentences[0];
+  return sentence.length > 220 ? `${sentence.slice(0, 217)}…` : sentence;
+}
+
+/** Builds a multiple-choice quiz from the key ideas of the transcript, for demo mode without AI. */
+export function makeDemoQuiz(turns: ArenaTurn[]): QuizQuestion[] {
+  const quiz: QuizQuestion[] = [];
+  const sessionClaims = turns
+    .filter((turn) => ["challenge", "response", "clarify"].includes(turn.action))
+    .map((turn) => turn.cardText?.trim())
+    .filter((text): text is string => Boolean(text));
+  const openingSentences = new Map<ThinkerId, string>();
+  for (const turn of turns) {
+    if (turn.speakerId && (turn.action === "opening" || turn.action === "invite")) {
+      openingSentences.set(turn.speakerId, keySentence(turn.dialogue));
+    }
+  }
+
+  function add(
+    question: string,
+    correct: string,
+    distractorPool: string[],
+    explanation: string,
+    turn: ArenaTurn,
+  ) {
+    const distractors = [...new Set(distractorPool)]
+      .filter((option) => option !== correct)
+      .slice(0, 3);
+    if (distractors.length < 3) return;
+    const options = shuffle([correct, ...distractors]);
+    quiz.push({
+      question,
+      options,
+      answerIndex: options.indexOf(correct),
+      explanation,
+      evidenceTurnIds: [turn.id],
+    });
+  }
+
+  for (const turn of turns) {
+    const speaker = turn.speakerId ? THINKERS[turn.speakerId] : null;
+    const target = turn.targetId ? THINKERS[turn.targetId] : null;
+    if (!speaker && turn.action !== "connection") continue;
+
+    if (speaker && (turn.action === "opening" || turn.action === "invite")) {
+      const otherLenses = THINKER_IDS.filter((id) => id !== speaker.id);
+      add(
+        `Trong phiên, ý nào sau đây thể hiện lăng kính của ${speaker.name}?`,
+        keySentence(turn.dialogue),
+        [
+          ...shuffle(otherLenses.filter((id) => openingSentences.has(id)))
+            .map((id) => openingSentences.get(id) as string),
+          ...shuffle(otherLenses.filter((id) => !openingSentences.has(id)))
+            .map((id) => LENS_SUMMARIES[id]),
+        ],
+        `${speaker.name} nhìn vấn đề qua lăng kính “${speaker.lens}”: ${turn.dialogue}`,
+        turn,
+      );
+      add(
+        `Ai trong Hội đồng nhìn vấn đề qua lăng kính “${speaker.lens}”?`,
+        speaker.name,
+        shuffle(otherLenses).map((id) => THINKERS[id].name),
+        `${speaker.name} đại diện cho lăng kính “${speaker.lens}”. ${LENS_SUMMARIES[speaker.id]}`,
+        turn,
+      );
+    } else if (speaker && turn.action === "challenge" && turn.cardText) {
+      add(
+        `${speaker.name} phản biện ${target?.name ?? "Hội đồng"} ở điểm nào?`,
+        turn.cardText,
+        shuffle([...sessionClaims, ...DISTRACTOR_CLAIMS]),
+        turn.dialogue,
+        turn,
+      );
+    } else if (speaker && turn.action === "response" && turn.cardText) {
+      add(
+        `Khi hồi đáp${target ? ` ${target.name}` : ""}, ${speaker.name} đi đến nhận định nào?`,
+        turn.cardText,
+        shuffle([...sessionClaims, ...DISTRACTOR_CLAIMS]),
+        turn.dialogue,
+        turn,
+      );
+    } else if (speaker && turn.action === "clarify" && turn.cardText) {
+      add(
+        `${speaker.name} đặt câu hỏi gì để làm rõ vấn đề?`,
+        turn.cardText,
+        shuffle([...sessionClaims, ...DISTRACTOR_CLAIMS]),
+        turn.dialogue,
+        turn,
+      );
+    } else if (turn.action === "connection" && turn.relation && turn.relation !== "none") {
+      const labels: Record<Exclude<RelationType, "none">, string> = {
+        complement: "Bổ sung cho nhau",
+        "different-levels": "Nói ở các tầng khác nhau",
+        tension: "Căng thẳng với nhau",
+        conflict: "Mâu thuẫn trực tiếp",
+      };
+      const correct = labels[turn.relation];
+      add(
+        "Hội đồng xác định các lăng kính trong phiên quan hệ với nhau như thế nào?",
+        correct,
+        Object.values(labels),
+        turn.dialogue,
+        turn,
+      );
+    }
+  }
+
+  return quiz.slice(0, 10);
+}
+
 type DemoKind = "start" | "continue" | "ask" | "challenge" | "invite";
 
 function makeTurn(
