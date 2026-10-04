@@ -1,7 +1,7 @@
-import { ArenaWorkbench } from "@/components/arena-workbench";
+import { MainWorkbench } from "@/components/main-workbench";
 
 export default function Home() {
   return (
-    <ArenaWorkbench aiConfigured={Boolean(process.env.OPENAI_API_KEY)} />
+    <MainWorkbench aiConfigured={Boolean(process.env.OPENAI_API_KEY)} />
   );
 }

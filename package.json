@@ -16,6 +16,7 @@
     "check:xray-content": "node scripts/build_mln111_index.mjs --check && node --test tests/mln111-xray.test.mjs"
   },
   "dependencies": {
+    "mongoose": "^9.10.4",
     "next": "16.3.8",
     "openai": "^7.25.0",
     "react": "19.2.8",
