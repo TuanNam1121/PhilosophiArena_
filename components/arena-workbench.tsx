@@ -161,7 +161,13 @@ function ThinkerButton({
   );
 }
 
-export function ArenaWorkbench({ aiConfigured }: { aiConfigured: boolean }) {
+export function ArenaWorkbench({
+  aiConfigured,
+  onSwitchToSocratic,
+}: {
+  aiConfigured: boolean;
+  onSwitchToSocratic?: () => void;
+}) {
   const [screen, setScreen] = useState<Screen>("setup");
   const [question, setQuestion] = useState(DEFAULT_QUESTION);
   const [activeIds, setActiveIds] = useState<ThinkerId[]>(DEFAULT_ACTIVE_IDS);
@@ -498,9 +504,25 @@ export function ArenaWorkbench({ aiConfigured }: { aiConfigured: boolean }) {
         <span className="brand-wordmark">LĂNG KÍNH</span>
       </button>
       <div className="header-center">
-        <span className="header-rule" />
-        <span>AI PHILOSOPHY LAB</span>
-        <span className="header-rule" />
+        {onSwitchToSocratic ? (
+          <div className="inline-flex rounded-full bg-[var(--paper-deep)] p-1 border border-[var(--line)]">
+            <button className="px-4 py-1.5 text-xs font-semibold rounded-full bg-[var(--green)] text-white shadow-sm">
+              🏛️ Arena Hội Đồng
+            </button>
+            <button
+              onClick={onSwitchToSocratic}
+              className="px-4 py-1.5 text-xs font-semibold rounded-full text-[var(--muted)] hover:text-[var(--ink)] transition-colors"
+            >
+              🔍 Socratic Mode
+            </button>
+          </div>
+        ) : (
+          <>
+            <span className="header-rule" />
+            <span>AI PHILOSOPHY LAB</span>
+            <span className="header-rule" />
+          </>
+        )}
       </div>
       <div className={`connection-status${aiConfigured ? " is-live" : " is-demo"}`}>
         <span className="status-dot" />
