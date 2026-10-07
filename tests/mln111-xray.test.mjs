@@ -73,10 +73,26 @@ test("footer pages and chunk line ranges have independent golden values", () => 
 
 test("long chunks never lose text behind a character cutoff", () => {
   const words = Array.from({ length: 24 }, (_, index) => `${index}-${"x".repeat(200)}`);
+  words[words.length - 1] += ".";
   const built = buildMlnBookIndex(fixture.replace("alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu", words.join(" ")), "fixture.md", { chunkWordLimit: 24, chunkWordOverlap: 4 });
-  const chunk = built.sections.find((section) => section.id === "ch1-i-1-a").chunks[0];
+  const chunks = built.sections.find((section) => section.id === "ch1-i-1-a").chunks;
+  const chunk = chunks.find((candidate) => candidate.text.startsWith(words[0]));
+  assert.ok(chunk);
   assert.ok(chunk.text.length > 1500);
-  assert.equal(chunk.text, words.join(" "));
+  assert.ok(chunk.text.startsWith(words[0]));
+  assert.ok(chunks.map((candidate) => candidate.text).join(" ").includes(words.at(-1)));
+});
+
+test("sentence-aware chunks keep a sentence that wraps across Markdown lines", () => {
+  const wrapped = fixture.replace(
+    "alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu",
+    "Đây là một câu rất dài được viết tiếp\nở dòng kế tiếp nhưng vẫn là một câu hoàn chỉnh.",
+  );
+  const built = buildMlnBookIndex(wrapped, "fixture.md", { chunkWordLimit: 8, chunkWordOverlap: 2 });
+  const chunks = built.sections.find((section) => section.id === "ch1-i-1-a").chunks;
+  const sentenceChunk = chunks.find((chunk) => chunk.text.includes("Đây là một câu rất dài"));
+  assert.ok(sentenceChunk);
+  assert.ok(sentenceChunk.text.includes("ở dòng kế tiếp nhưng vẫn là một câu hoàn chỉnh."));
 });
 
 test("quote spans cover every source chunk without rewriting any word", () => {

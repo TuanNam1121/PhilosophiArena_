@@ -13,7 +13,7 @@ Nguồn chuẩn là file giáo trình `780897357-SACH-Giao-trinh…md` trong `do
 - Mục Markdown giữ đường dẫn chương/mục và ID ổn định.
 - Những tiêu đề học thuật bên trong mục lớn được tách riêng: sáu cặp phạm trù, ba quy luật, các hình thái ý thức xã hội…
 - Một đơn vị chỉ có tiêu đề, không có phần giải thích, không được dùng để mapping.
-- Chunk tối đa 240 từ phân cách bằng khoảng trắng, chồng lấp 48 từ trong cùng đơn vị. Không cắt theo số ký tự.
+- Chunk mục tiêu tối đa 240 từ, chồng lấp mục tiêu 48 từ trong cùng đơn vị; bộ chia đệ quy ưu tiên ranh giới câu và không cắt câu khi câu trải qua nhiều dòng Markdown. Một câu riêng lẻ dài hơn mục tiêu được giữ nguyên, nên kích thước chunk thực tế có thể vượt 240 từ. Không cắt theo số ký tự.
 - Số trang là marker **cuối trang** trong bản Markdown, áp dụng cho phần văn bản đứng trước marker. Đây là trang in theo bản nguồn, không phải số trang PDF hay màn hình.
 - Vị trí được gắn theo từng chunk thực sự trích dẫn, không lấy phạm vi của cả mục lớn. Văn bản được bỏ dấu định dạng Markdown và chuẩn hóa khoảng trắng; không sửa nội dung OCR.
 - Bộ sinh và kiểm tra độc lập đối chiếu đủ dòng/từ của phần B, overlap và vị trí trang/dòng. Nếu nguồn thay đổi, phải sinh lại chỉ mục.
